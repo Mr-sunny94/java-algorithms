@@ -1,34 +1,23 @@
-package Sorting;
-
-public class bubblesort {
-
-    public static void main(String args[])
-    {
-        int a[]={3,4,5,2,1,87,45};
-
-
-       for(int i=1;i<a.length;i++)
-       {
-           int key=a[i];
-
-           int hole=i-1;
-
-
-           while (hole>=0  && a[hole]>key)
-           {
-               a[hole+1]=a[hole];
-               hole=hole-1;
-
-               a[hole+1]=key;
-           }
-
-       }
-
-       for(int i=0;i<a.length;i++)
-       {
-           System.out.println((a[i]));
-       }
-
-
-    }
+function bubble_Sort(a)
+{
+    var swapp;
+    var n = a.length-1;
+    var x=a;
+    do {
+        swapp = false;
+        for (var i=0; i < n; i++)
+        {
+            if (x[i] < x[i+1])
+            {
+               var temp = x[i];
+               x[i] = x[i+1];
+               x[i+1] = temp;
+               swapp = true;
+            }
+        }
+        n--;
+    } while (swapp);
+ return x; 
 }
+
+console.log(bubble_Sort([12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]));
